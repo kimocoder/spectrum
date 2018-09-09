@@ -20,10 +20,18 @@ on property:persist.spectrum.profile=0
 on property:persist.spectrum.profile=1
     # Add configs here
 
+# PerformancePLUS (based on DrunkSauce Lite)
+on property:persist.spectrum.profile=1
+    # Add configs here
+
 # Battery
 on property:persist.spectrum.profile=2
     # Add configs here
 
 # Gaming
+on property:persist.spectrum.profile=3
+    # Add configs here
+
+# GamingPLUS
 on property:persist.spectrum.profile=3
     # Add configs here

@@ -36,13 +36,21 @@ public class ProfileTile extends TileService {
         boolean isActive = getServiceStatus();
 
         // Update tile and set profile
-        if (isActive && click) {
-            Utils.setProfile(3);
+	if (isActive && click) {
+            Utils.setProfile(5);
+            editor.putString("profile", "gamingPLUS");
+            editor.apply();        
+	} else if (isActive && click) {
+            Utils.setProfile(4);
             editor.putString("profile", "gaming");
             editor.apply();
         } else if (!isActive && click) {
-            Utils.setProfile(2);
+            Utils.setProfile(3);
             editor.putString("profile", "battery");
+            editor.apply();
+	} else if (isActive && !click){
+            Utils.setProfile(2);
+            editor.putString("profile", "performancePLUS");
             editor.apply();
         } else if (isActive && !click){
             Utils.setProfile(1);
@@ -79,13 +87,21 @@ public class ProfileTile extends TileService {
         disabledProfilesList.addAll(Arrays.asList(Utils.disabledProfiles().split(",")));
 
         // Update tile
-        if (profile.contains("gaming") && !disabledProfilesList.contains(profile)) {
+	if (profile.contains("gamingPLUS") && !disabledProfilesList.contains(profile)) {
+            newLabel = "GamingPLUS";
+            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.game);
+            click = false;
+        } else if (profile.contains("gaming") && !disabledProfilesList.contains(profile)) {
             newLabel = "Gaming";
             newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.game);
             click = false;
         } else if (profile.contains("battery") && !disabledProfilesList.contains(profile)) {
             newLabel = "Battery";
             newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.battery);
+            click = true;
+	} else if (profile.contains("performancePLUS") && !disabledProfilesList.contains(profile)){
+            newLabel = "PerformancePLUS";
+            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.rocket);
             click = true;
         } else if (profile.contains("performance") && !disabledProfilesList.contains(profile)){
             newLabel = "Performance";

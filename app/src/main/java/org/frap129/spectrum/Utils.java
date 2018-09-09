@@ -78,7 +78,7 @@ class Utils {
 
     // Method that interprets a profile and sets it
     public static void setProfile(int profile) {
-        int numProfiles = 3;
+        int numProfiles = 5;
         if (profile > numProfiles || profile < 0) {
             setProp(0);
         } else {

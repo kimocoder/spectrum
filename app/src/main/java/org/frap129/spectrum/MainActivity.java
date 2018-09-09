@@ -59,8 +59,10 @@ public class MainActivity extends AppCompatActivity {
         final CardView card3 = (CardView) findViewById(R.id.card3);
         final int balColor = ContextCompat.getColor(this, R.color.colorBalance);
         final int perColor = ContextCompat.getColor(this, R.color.colorPerformance);
+	final int perColor = ContextCompat.getColor(this, R.color.colorPerformancePLUS);
         final int batColor = ContextCompat.getColor(this, R.color.colorBattery);
         final int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
+	final int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
 
         // Check for Spectrum Support
         if (!checkSupport(this)) {
@@ -112,11 +114,17 @@ public class MainActivity extends AppCompatActivity {
                 case "performance":
                     card1.setVisibility(View.GONE);
                     break;
-                case "battery":
+	        case "performancePLUS":
                     card2.setVisibility(View.GONE);
                     break;
-                case "gaming":
+                case "battery":
                     card3.setVisibility(View.GONE);
+                    break;
+                case "gaming":
+                    card4.setVisibility(View.GONE);
+                    break;
+		case "gaming":
+                    card5.setVisibility(View.GONE);
                     break;
                 default:
                     break;
@@ -208,19 +216,33 @@ public class MainActivity extends AppCompatActivity {
                 oldCard = card1;
                 editor.putString("profile", "performance");
                 editor.apply();
-            } else if (result.contains("2")) {
+	   } else if (result.contains("2")) {
+                CardView card1 = (CardView) findViewById(R.id.card1);
+                int perColor = ContextCompat.getColor(this, R.color.colorPerformance);
+                card1.setCardBackgroundColor(perColor);
+                oldCard = card1;
+                editor.putString("profile", "performancePLUS");
+                editor.apply();
+            } else if (result.contains("3")) {
                 CardView card2 = (CardView) findViewById(R.id.card2);
                 int batColor = ContextCompat.getColor(this, R.color.colorBattery);
                 card2.setCardBackgroundColor(batColor);
                 oldCard = card2;
                 editor.putString("profile", "battery");
                 editor.apply();
-            } else if (result.contains("3")) {
+            } else if (result.contains("4")) {
                 CardView card3 = (CardView) findViewById(R.id.card3);
                 int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
                 card3.setCardBackgroundColor(gamColor);
                 oldCard = card3;
                 editor.putString("profile", "gaming");
+                editor.apply();
+	    } else if (result.contains("5")) {
+                CardView card3 = (CardView) findViewById(R.id.card3);
+                int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
+                card3.setCardBackgroundColor(gamColor);
+                oldCard = card3;
+                editor.putString("profile", "gamingPLUS");
                 editor.apply();
             } else {
                 editor.putString("profile", "custom");
@@ -253,8 +275,10 @@ public class MainActivity extends AppCompatActivity {
         if (Utils.supportsCustomDesc()){
             if(!Objects.equals(getCustomDesc("balance"), "fail")) desc0.setText(getCustomDesc("balance"));
             if(!Objects.equals(getCustomDesc("performance"), "fail")) desc1.setText(getCustomDesc("performance"));
+	    if(!Objects.equals(getCustomDesc("performancePLUS"), "fail")) desc1.setText(getCustomDesc("performancePLUS"));
             if(!Objects.equals(getCustomDesc("battery"), "fail")) desc2.setText(getCustomDesc("battery"));
             if(!Objects.equals(getCustomDesc("gaming"), "fail")) desc3.setText(getCustomDesc("gaming"));
+            if(!Objects.equals(getCustomDesc("gamingPLUS"), "fail")) desc3.setText(getCustomDesc("gamingPLUS"));
         }
     }
 
