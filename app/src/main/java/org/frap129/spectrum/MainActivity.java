@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 case "gaming":
                     card4.setVisibility(View.GONE);
                     break;
-		case "gaming":
+		case "gamingPLUS":
                     card5.setVisibility(View.GONE);
                     break;
                 default:
