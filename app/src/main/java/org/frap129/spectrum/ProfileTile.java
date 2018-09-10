@@ -42,15 +42,15 @@ public class ProfileTile extends TileService {
             editor.apply();        
 	} else if (isActive && click) {
             Utils.setProfile(4);
-            editor.putString("profile", "gaming");
+            editor.putString("profile", "performancePLUS");
             editor.apply();
         } else if (!isActive && click) {
             Utils.setProfile(3);
-            editor.putString("profile", "battery");
+            editor.putString("profile", "gaming");
             editor.apply();
 	} else if (isActive && !click){
             Utils.setProfile(2);
-            editor.putString("profile", "performancePLUS");
+            editor.putString("profile", "battery");
             editor.apply();
         } else if (isActive && !click){
             Utils.setProfile(1);
@@ -89,20 +89,20 @@ public class ProfileTile extends TileService {
         // Update tile
 	if (profile.contains("gamingPLUS") && !disabledProfilesList.contains(profile)) {
             newLabel = "GamingPLUS";
-            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.game);
+            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.game1);
             click = false;
-        } else if (profile.contains("gaming") && !disabledProfilesList.contains(profile)) {
-            newLabel = "Gaming";
-            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.game);
-            click = false;
-        } else if (profile.contains("battery") && !disabledProfilesList.contains(profile)) {
-            newLabel = "Battery";
-            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.battery);
-            click = true;
-	} else if (profile.contains("performancePLUS") && !disabledProfilesList.contains(profile)){
+	    } else if (profile.contains("performancePLUS") && !disabledProfilesList.contains(profile)){
             newLabel = "PerformancePLUS";
-            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.rocket);
+            newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.rocket1);
             click = true;
+        } else if (profile.contains("gaming") && !disabledProfilesList.contains(profile)) {
+        newLabel = "Gaming";
+        newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.game);
+        click = false;
+        } else if (profile.contains("battery") && !disabledProfilesList.contains(profile)) {
+        newLabel = "Battery";
+        newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.battery);
+        click = true;
         } else if (profile.contains("performance") && !disabledProfilesList.contains(profile)){
             newLabel = "Performance";
             newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.rocket);
