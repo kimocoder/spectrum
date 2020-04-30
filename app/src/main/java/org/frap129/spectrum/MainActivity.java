@@ -1,5 +1,6 @@
 package org.frap129.spectrum;
 
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -20,11 +21,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import eu.chainfire.libsuperuser.Shell;
 import java.util.List;
 import java.util.Objects;
-
-import eu.chainfire.libsuperuser.Shell;
+import org.frap129.spectrum.MainActivity;
+import org.frap129.spectrum.ProfileLoaderActivity;
+import org.frap129.spectrum.R;
 
 import static org.frap129.spectrum.Utils.KPM;
 import static org.frap129.spectrum.Utils.checkSupport;
@@ -40,7 +42,8 @@ import static org.frap129.spectrum.Utils.notTunedGov;
 import static org.frap129.spectrum.Utils.profileProp;
 import static org.frap129.spectrum.Utils.setProfile;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+ {
 
     private CardView oldCard;
     private List<String> suResult = null;
