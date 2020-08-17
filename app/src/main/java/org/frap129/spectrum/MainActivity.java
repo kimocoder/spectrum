@@ -57,10 +57,14 @@ public class MainActivity extends AppCompatActivity {
         final CardView card1 = (CardView) findViewById(R.id.card1);
         final CardView card2 = (CardView) findViewById(R.id.card2);
         final CardView card3 = (CardView) findViewById(R.id.card3);
+        final CardView card4 = (CardView) findViewById(R.id.card4);
+        final CardView card5 = (CardView) findViewById(R.id.card5);
         final int balColor = ContextCompat.getColor(this, R.color.colorBalance);
         final int perColor = ContextCompat.getColor(this, R.color.colorPerformance);
+        final int bcColor = ContextCompat.getColor(this, R.color.colorPerformancePLUS);
         final int batColor = ContextCompat.getColor(this, R.color.colorBattery);
-        final int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
+        final int mcColor = ContextCompat.getColor(this, R.color.colorGaming);
+        final int gamColor = ContextCompat.getColor(this, R.color.colorGamingPLUS);
 
         // Check for Spectrum Support
         if (!checkSupport(this)) {
@@ -117,6 +121,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case "gaming":
                     card3.setVisibility(View.GONE);
+                    break;
+                case "performancePLUS":
+                    card4.setVisibility(View.GONE);
+                    break;
+                case "gamingPLUS":
+                    card5.setVisibility(View.GONE);
                     break;
                 default:
                     break;
@@ -176,6 +186,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cardClick(card4, 3, bcColor);
+                notaneasteregg = 1;
+            }
+        });
+
+        card5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cardClick(card5, 3, mcColor);
+                notaneasteregg = 1;
+            }
+        });
+
     }
 
     // Method that detects the selected profile on launch
@@ -222,6 +248,20 @@ public class MainActivity extends AppCompatActivity {
                 oldCard = card3;
                 editor.putString("profile", "gaming");
                 editor.apply();
+            } else if (result.contains("4")) {
+                CardView card4 = (CardView) findViewById(R.id.card4);
+                int bcColor = ContextCompat.getColor(this, R.color.colorPerformancePLUS);
+                card4.setCardBackgroundColor(bcColor);
+                oldCard = card4;
+                editor.putString("profile", "performancePLUS");
+                editor.apply();
+            } else if (result.contains("5")) {
+                CardView card5 = (CardView) findViewById(R.id.card5);
+                int mcColor = ContextCompat.getColor(this, R.color.colorGamingPLUS);
+                card5.setCardBackgroundColor(mcColor);
+                oldCard = card5;
+                editor.putString("profile", "gamingPLUS");
+                editor.apply();
             } else {
                 editor.putString("profile", "custom");
                 editor.apply();
@@ -235,6 +275,8 @@ public class MainActivity extends AppCompatActivity {
         TextView desc1 = (TextView) findViewById(R.id.desc1);
         TextView desc2 = (TextView) findViewById(R.id.desc2);
         TextView desc3 = (TextView) findViewById(R.id.desc3);
+        TextView desc4 = (TextView) findViewById(R.id.desc4);
+        TextView desc5 = (TextView) findViewById(R.id.desc5);
         String balDesc;
         String kernel;
 
@@ -255,6 +297,8 @@ public class MainActivity extends AppCompatActivity {
             if(!Objects.equals(getCustomDesc("performance"), "fail")) desc1.setText(getCustomDesc("performance"));
             if(!Objects.equals(getCustomDesc("battery"), "fail")) desc2.setText(getCustomDesc("battery"));
             if(!Objects.equals(getCustomDesc("gaming"), "fail")) desc3.setText(getCustomDesc("gaming"));
+            if(!Objects.equals(getCustomDesc("performancePLUS"), "fail")) desc4.setText(getCustomDesc("performancePLUS"));
+            if(!Objects.equals(getCustomDesc("gamingPLUS"), "fail")) desc5.setText(getCustomDesc("gamingPLUS"));
         }
     }
 

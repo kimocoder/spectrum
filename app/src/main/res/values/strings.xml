@@ -6,6 +6,8 @@
     <string name="prof1">Performance</string>
     <string name="prof2">Battery</string>
     <string name="prof3">Gaming</string>
+    <string name="prof4">PerformancePLUS</string>
+    <string name="prof5">GamingPLUS</string>
 
     <!-- Support Strings -->
     <string name="no_spectrum_support_dialog_title">No Spectrum support detected</string>
@@ -19,6 +21,8 @@
     <string name="profdesc1">Tuned for top tier performance in standard tasks with many less regressions than Balanced, but maintains battery by limiting graphics.</string>
     <string name="profdesc2">Ultra-conservative profile that lets performance take a hit in order to achieve long-lasting battery life.</string>
     <string name="profdesc3">Need that extra 10 FPS? I gotchu. Identical to performance in most areas other than the unlocked Graphics performance</string>
+    <string name="profdesc4">IDENTICAL TO PERFORMANCE BUT USES OVERCLOCK FEATURES![Dont like to overclock?->Settle for performance profile.]</string>
+    <string name="profdesc5">Similar to gaming profile but USES GPU Overclock upto 588mhz along with cpu overlock.[Device might become hot and you might wanna have a charger handy.]</string>
 
     <!-- Profile Loader -->
     <string name="aboutLoader">Woah there!</string>

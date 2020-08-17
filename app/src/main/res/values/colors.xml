@@ -4,7 +4,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBalance">#43a047</color>
     <color name="colorPerformance">#fb8c00</color>
+    <color name="colorPerformancePLUS">#DC143C</color>
     <color name="colorBattery">#03a9f4</color>
     <color name="colorGaming">#ef5350</color>
+    <color name="colorGamingPLUS">#ce2029</color>
     <color name="splash_background">#212121</color>
 </resources>
