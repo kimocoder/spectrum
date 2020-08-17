@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/frap129/spectrum/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="70" height="70" /> Spectrum
+# <img src="https://raw.githubusercontent.com/frap129/spectrum/master/app/src/main/res/drawable-xxxhdpi/ic_launcher.png" width="70" height="70" /> Spectrum
 A simple, profile based kernel manager.
 
 ## How to add Spectrum support to your kernel
